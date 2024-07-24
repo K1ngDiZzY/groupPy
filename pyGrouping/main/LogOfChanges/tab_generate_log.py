@@ -8,7 +8,6 @@ class GenerateLogTab:
         self.tab = ttk.Frame(notebook)
         notebook.add(self.tab, text='Generate Log')
 
-        # Create a canvas to enable scrolling
         self.canvas = tk.Canvas(self.tab)
         self.scroll_y = tk.Scrollbar(self.tab, orient="vertical", command=self.canvas.yview)
         self.scroll_x = tk.Scrollbar(self.tab, orient="horizontal", command=self.canvas.xview)
@@ -25,12 +24,10 @@ class GenerateLogTab:
         self.canvas.configure(yscrollcommand=self.scroll_y.set)
         self.canvas.configure(xscrollcommand=self.scroll_x.set)
 
-        # Layout for canvas and scrollbars
         self.canvas.grid(row=0, column=0, sticky="nsew")
         self.scroll_y.grid(row=0, column=1, sticky="ns")
         self.scroll_x.grid(row=1, column=0, sticky="ew")
 
-        # Configure the grid to make the canvas expandable
         self.tab.grid_rowconfigure(0, weight=1)
         self.tab.grid_columnconfigure(0, weight=1)
 
