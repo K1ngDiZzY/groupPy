@@ -8,7 +8,6 @@ class MacToPhoneTab:
         self.tab_mac_to_phone = ttk.Frame(master=notebook)
         notebook.add(self.tab_mac_to_phone, text="MAC Addresses to Phone Numbers")
 
-        # Create a canvas to enable scrolling
         self.canvas = tk.Canvas(self.tab_mac_to_phone)
         self.scroll_y = tk.Scrollbar(self.tab_mac_to_phone, orient="vertical", command=self.canvas.yview)
         self.scroll_x = tk.Scrollbar(self.tab_mac_to_phone, orient="horizontal", command=self.canvas.xview)
@@ -25,12 +24,10 @@ class MacToPhoneTab:
         self.canvas.configure(yscrollcommand=self.scroll_y.set)
         self.canvas.configure(xscrollcommand=self.scroll_x.set)
 
-        # Layout for canvas and scrollbars
         self.canvas.grid(row=0, column=0, sticky="nsew")
         self.scroll_y.grid(row=0, column=1, sticky="ns")
         self.scroll_x.grid(row=1, column=0, sticky="ew")
 
-        # Configure the grid to make the canvas expandable
         self.tab_mac_to_phone.grid_rowconfigure(0, weight=1)
         self.tab_mac_to_phone.grid_columnconfigure(0, weight=1)
 
