@@ -54,7 +54,6 @@ class GenerateLogTab:
         self.var_no_bridge = tk.BooleanVar()
         self.var_removed_frm_cutsheet = tk.BooleanVar()
         self.var_speed_dial_changes = tk.BooleanVar()
-        self.var_no_healthcare = tk.BooleanVar()
         # Backburner
         self.var_backburner_device = tk.BooleanVar()
         self.var_backburner_skype = tk.BooleanVar()
@@ -70,7 +69,6 @@ class GenerateLogTab:
             ("No Bridge appearance in BR&FT", self.var_no_bridge),
             ("Speed Dial Changes", self.var_speed_dial_changes),
             ("Removed from Cutover, couldn't locate phone", self.var_removed_frm_cutsheet),
-            ("User does not have a healthcare account", self.var_no_healthcare),
             ("Could not find Device, moved to Backburner", self.var_backburner_device),
             ("Moved Skype account to Backburner", self.var_backburner_skype),
             ("Moved ACD line to Backburner", self.var_backburner_acd),
