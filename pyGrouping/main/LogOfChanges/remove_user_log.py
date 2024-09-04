@@ -3,11 +3,13 @@ from tkinter import ttk
 from tkinter import scrolledtext
 from tkinter import messagebox
 
+
 class UserLogApp:
     def __init__(self, notebook):
         self.tab = ttk.Frame(notebook)
         notebook.add(self.tab, text="No Healthcare Account")
 
+        # Create a canvas to enable scrolling
         self.canvas = tk.Canvas(self.tab)
         self.scroll_y = tk.Scrollbar(self.tab, orient="vertical", command=self.canvas.yview)
         self.scroll_x = tk.Scrollbar(self.tab, orient="horizontal", command=self.canvas.xview)
@@ -24,24 +26,28 @@ class UserLogApp:
         self.canvas.configure(yscrollcommand=self.scroll_y.set)
         self.canvas.configure(xscrollcommand=self.scroll_x.set)
 
+        # Layout for canvas and scrollbars
         self.canvas.grid(row=0, column=0, sticky="nsew")
         self.scroll_y.grid(row=0, column=1, sticky="ns")
         self.scroll_x.grid(row=1, column=0, sticky="ew")
-        
+
+        # Configure the grid to make the canvas expandable
         self.tab.grid_rowconfigure(0, weight=1)
         self.tab.grid_columnconfigure(0, weight=1)
-        
 
+        # Frame for user name and phone number
         self.user_info_frame = ttk.Frame(self.scrollable_frame)
         self.user_info_frame.grid(row=0, column=0, padx=10, pady=10, sticky='ew')
 
         # Entry for full name
-        ttk.Label(self.user_info_frame, text="Enter the user's full name:").grid(row=0, column=0, padx=5, pady=5, sticky='w')
+        ttk.Label(self.user_info_frame, text="Enter the user's full name:").grid(row=0, column=0, padx=5, pady=5,
+                                                                                 sticky='w')
         self.full_name_entry = ttk.Entry(self.user_info_frame, width=40)
         self.full_name_entry.grid(row=0, column=1, padx=5, pady=5, sticky='w')
 
         # Entry for phone number
-        ttk.Label(self.user_info_frame, text="Enter the user's phone number:").grid(row=1, column=0, padx=5, pady=5, sticky='w')
+        ttk.Label(self.user_info_frame, text="Enter the user's phone number:").grid(row=1, column=0, padx=5, pady=5,
+                                                                                    sticky='w')
         self.phone_number_entry = ttk.Entry(self.user_info_frame, width=20)
         self.phone_number_entry.grid(row=1, column=1, padx=5, pady=5, sticky='w')
 
@@ -50,7 +56,8 @@ class UserLogApp:
         self.add_user_button.grid(row=1, column=0, pady=5, sticky='w')
 
         # Button to clear the entry list
-        self.clear_entry_list_button = ttk.Button(self.scrollable_frame, text="Clear Entry List", command=self.clear_entry_list)
+        self.clear_entry_list_button = ttk.Button(self.scrollable_frame, text="Clear Entry List",
+                                                  command=self.clear_entry_list)
         self.clear_entry_list_button.grid(row=1, column=1, pady=5, sticky='e')
 
         # Initialize a list to store user info
