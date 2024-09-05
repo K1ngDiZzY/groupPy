@@ -12,4 +12,4 @@ command:
 
 git clone https://github.com/K1ngDiZzY/groupPy.git
     
-The "application" runs out of the app folder main.pyw is the file you want to make a short cut
+You can make a shortcut for the application just right click the main.pyw file to make the shortcut
