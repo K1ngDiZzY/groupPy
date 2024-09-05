@@ -5,7 +5,6 @@ from app.frames.LogOfChanges.tab_generate_log import GenerateLogTab
 from app.frames.LogOfChanges.remove_user_log import UserLogApp
 from app.frames.MacAddressGui.tab_mac_to_phone import MacToPhoneTab
 from app.frames.PhoneCheck.data_cleaning import PhoneNumberCleanerGUI
-# from frames.TestingIdeas.drop_down_list_test import GenerateLogTab
 
 
 def main():
@@ -28,8 +27,6 @@ def main():
     GenerateLogTab(notebook)
     UserLogApp(notebook)
     PhoneNumberCleanerGUI(notebook)
-
-    # GenerateLogTab(notebook)
 
     notebook.pack(expand=1, fill="both")
     root.mainloop()
